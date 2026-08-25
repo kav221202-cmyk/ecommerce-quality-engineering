@@ -2,9 +2,13 @@
 
 ## 1. Project Overview
 
-This project focuses on testing an e-commerce web application using manual and automated software testing techniques.
+This project focuses on Quality Assurance and Test Automation for an e-commerce web application.
 
-The purpose of the project is to evaluate application functionality, identify defects, and demonstrate a structured Quality Assurance process.
+The project demonstrates a structured software testing process including test planning, manual test case design, functional testing, UI automation, API testing, defect investigation, test reporting, and CI/CD integration.
+
+The objective is to develop a maintainable automation framework while applying practical QA engineering principles.
+
+---
 
 ## 2. Application Under Test
 
@@ -12,152 +16,129 @@ The purpose of the project is to evaluate application functionality, identify de
 
 **Application Type:** E-commerce web application
 
+**UI Application URL:** https://www.saucedemo.com
+
+**API Application:** DummyJSON
+
+**API Base URL:** https://dummyjson.com
+
+---
+
 ## 3. Testing Objectives
 
-The main objectives are:
+The main objectives of this project are:
 
-- Verify that core application functionality works as expected.
-- Identify functional and usability defects.
-- Validate authentication and authorization-related behavior.
-- Verify shopping and checkout workflows.
-- Create reusable manual test cases.
-- Automate selected test cases using Playwright.
-- Integrate automated tests into CI/CD.
-- Generate test reports.
+- Verify that core application functionality behaves as expected.
+- Validate the authentication workflow.
+- Validate product browsing and product-related functionality.
+- Validate shopping cart functionality.
+- Validate the checkout workflow.
+- Verify positive and negative application scenarios.
+- Identify and document defects or automation issues.
+- Develop reusable automated UI tests using Playwright.
+- Develop automated API tests.
+- Apply the Page Object Model design pattern.
+- Implement environment-based configuration.
+- Generate automated test reports.
+- Capture screenshots, videos, and traces for failed UI tests.
+- Integrate automated testing into a CI/CD pipeline using GitHub Actions.
+- Demonstrate a maintainable and scalable QA automation framework.
+
+---
 
 ## 4. Scope
 
-### In Scope
+### 4.1 In Scope
 
-- Authentication
+The following areas are currently covered by the project:
+
+- User authentication
+- Login validation
 - Product browsing
-- Product details
+- Product information validation
 - Product sorting
 - Shopping cart
+- Adding products to cart
+- Removing products from cart
+- Cart validation
 - Checkout
+- Customer information validation
+- Checkout overview
+- Order summary validation
 - Order completion
-- Navigation
-- Logout
-- Error handling
-- UI validation
-- Cross-browser automation
-- Accessibility testing
-- Automated regression testing
-
-### Out of Scope
-
-- Production payment processing
-- Real customer data
-- Real financial transactions
-- Production infrastructure testing
-
-## 5. Testing Types
-
-The project will include:
-
-- Functional testing
 - Negative testing
-- Regression testing
-- Smoke testing
+- UI functional testing
 - End-to-end testing
-- UI testing
-- API testing
-- Database validation
-- Accessibility testing
-- Performance testing
-- Security-oriented testing
-- Cross-browser testing
+- REST API testing
+- API response validation
+- API negative testing
+- Automated regression testing
+- Test reporting
+- Failure evidence collection
+- CI/CD execution using GitHub Actions
 
-## 6. Test Environment
+### 4.2 Out of Scope
 
-**Operating System:** Windows
+The following areas are outside the current implementation:
 
-**Browsers:**
-- Chromium
-- Firefox
-- WebKit
+- Real payment processing
+- Real financial transactions
+- Real customer data
+- Production infrastructure testing
+- Database-level testing
+- Load and stress testing
+- Full security penetration testing
+- Production environment testing
+- Comprehensive accessibility compliance testing
 
-**Automation Framework:** Playwright
+---
 
-**Programming Language:** TypeScript
+## 5. Testing Approach
 
-**Version Control:** Git/GitHub
+The project follows a risk-based and layered testing approach.
 
-## 7. Test Data
+### 5.1 Manual Testing
 
-Testing will use the test accounts and data provided by the application.
+Manual test scenarios are designed to identify functional requirements and expected application behaviour.
 
-No real customer information will be used.
+Manual testing is used to:
 
-## 8. Entry Criteria
+- Validate application workflows.
+- Identify functional issues.
+- Define expected results.
+- Design test scenarios for automation.
+- Verify negative scenarios.
 
-Testing can begin when:
+### 5.2 UI Automation
 
-- The application is accessible.
-- Required test data is available.
-- The testing environment is functional.
+Playwright with TypeScript is used to automate important end-to-end user workflows.
 
-## 9. Exit Criteria
+The UI automation covers:
 
-Testing can be considered complete when:
+- Authentication
+- Product functionality
+- Shopping cart
+- Checkout
 
-- Planned test cases have been executed.
-- Critical workflows have been tested.
-- Failed tests have been investigated.
-- Defects have been documented where applicable.
-- Automated regression tests are implemented.
-- Test results have been documented.
+### 5.3 API Testing
 
-## 10. Deliverables
+Playwright API request functionality is used to validate REST API endpoints.
 
-The project will produce:
+API testing includes:
 
-- Test strategy
-- Test plan
-- Test scenarios
-- Manual test cases
-- Defect reports
-- Automated UI tests
-- API tests
-- Database validation tests
-- Accessibility tests
-- Performance tests
-- CI/CD pipeline
-- Automated test reports
+- HTTP status code validation
+- Response header validation
+- JSON response validation
+- Response structure validation
+- Required field validation
+- Product ID validation
+- Negative API testing
 
-## 11. Manual Test Execution Summary
+### 5.4 Regression Testing
 
-### Authentication
+Automated regression tests are executed to verify that previously implemented functionality continues to work after changes.
 
-Total: 20  
-Passed: 20  
-Failed: 0
+The complete Playwright test suite can be executed using:
 
-### Products
-
-Total: 12  
-Passed: 12
-Failed: 0
-
-### Shopping Cart
-
-Total: 8  
-Passed: 8 
-Failed: 0
-
-### Checkout
-
-Total: 12  
-Passed: 12
-Failed: 0
-
-### Navigation
-
-Total: 4  
-Passed: 4
-
-### Overall
-
-Total Test Cases: 56  
-Passed: 56 
-Failed: 0
+```bash
+npx playwright test
