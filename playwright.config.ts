@@ -27,7 +27,9 @@ export default defineConfig({
       use: {
         ...devices['Desktop Chrome'],
         baseURL: process.env.BASE_URL,
-        trace: 'on-first-retry',
+        trace: 'retain-on-failure',
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
       },
     },
 
@@ -39,7 +41,7 @@ export default defineConfig({
       testDir: './api-tests',
 
       use: {
-        trace: 'on-first-retry',
+        trace: 'retain-on-failure',
       },
     },
 
