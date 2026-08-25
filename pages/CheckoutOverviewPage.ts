@@ -19,9 +19,9 @@ export class CheckoutOverviewPage {
         this.cartItems = page.locator('.cart_item');
         this.itemNames = page.locator('.inventory_item_name');
         this.itemPrices = page.locator('.inventory_item_price');
-        this.subtotal = page.locator('.summary_subtotal');
-        this.tax = page.locator('.summary_tax');
-        this.total = page.locator('.summary_total');
+        this.subtotal = page.locator('.summary_subtotal_label');
+        this.tax = page.locator('.summary_tax_label');
+        this.total = page.locator('.summary_total_label');
         this.finishButton = page.locator('[data-test="finish"]');
         this.cancelButton = page.locator('[data-test="cancel"]');
     }
