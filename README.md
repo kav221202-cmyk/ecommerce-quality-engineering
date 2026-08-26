@@ -345,7 +345,7 @@ This allows the test suite to be executed selectively depending on the testing r
 ## 1. Clone the repository
 
 ```bash
-git clone <YOUR-GITHUB-REPOSITORY-URL>
+git clone https://github.com/kav221202-cmyk/ecommerce-quality-engineering
 ```
 
 Navigate into the project:
