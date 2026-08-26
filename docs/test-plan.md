@@ -41,6 +41,7 @@ The main objectives of this project are:
 - Implement environment-based configuration.
 - Generate automated test reports.
 - Capture screenshots, videos, and traces for failed UI tests.
+- Implement smoke and regression test tagging.
 - Integrate automated testing into a CI/CD pipeline using GitHub Actions.
 - Demonstrate a maintainable and scalable QA automation framework.
 
@@ -54,6 +55,7 @@ The following areas are currently covered by the project:
 
 - User authentication
 - Login validation
+- Logout
 - Product browsing
 - Product information validation
 - Product sorting
@@ -73,6 +75,8 @@ The following areas are currently covered by the project:
 - API response validation
 - API negative testing
 - Automated regression testing
+- Smoke testing
+- Test tagging
 - Test reporting
 - Failure evidence collection
 - CI/CD execution using GitHub Actions
@@ -95,7 +99,7 @@ The following areas are outside the current implementation:
 
 ## 5. Testing Approach
 
-The project follows a risk-based and layered testing approach.
+The project follows a layered testing approach combining manual testing, UI automation, API testing, regression testing, and CI/CD execution.
 
 ### 5.1 Manual Testing
 
@@ -107,7 +111,12 @@ Manual testing is used to:
 - Identify functional issues.
 - Define expected results.
 - Design test scenarios for automation.
-- Verify negative scenarios.
+- Verify positive and negative scenarios.
+- Provide a basis for regression testing.
+
+Manual test cases are documented in:
+
+`test-cases.md`
 
 ### 5.2 UI Automation
 
@@ -119,6 +128,14 @@ The UI automation covers:
 - Product functionality
 - Shopping cart
 - Checkout
+- Order completion
+
+The automation framework follows the **Page Object Model (POM)** design pattern to improve:
+
+- Reusability
+- Maintainability
+- Readability
+- Separation of test logic and page-specific implementation
 
 ### 5.3 API Testing
 
@@ -134,11 +151,17 @@ API testing includes:
 - Product ID validation
 - Negative API testing
 
-### 5.4 Regression Testing
+The API tests use DummyJSON as the API application under test.
 
-Automated regression tests are executed to verify that previously implemented functionality continues to work after changes.
+### 5.4 Smoke Testing
 
-The complete Playwright test suite can be executed using:
+Smoke tests are used to verify critical application functionality before broader test execution.
+
+Tests identified as smoke tests are tagged using:
+
+`@smoke`
+
+Smoke tests can be executed using:
 
 ```bash
-npx playwright test
+npx playwright test --grep "@smoke"
