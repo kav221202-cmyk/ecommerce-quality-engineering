@@ -6,7 +6,7 @@ import { CheckoutInformationPage } from '../pages/CheckoutInformationPage';
 import { CheckoutOverviewPage } from '../pages/CheckoutOverviewPage';
 import { users } from '../test-data/users';
 
-test.describe('Checkout Tests', () => {
+test.describe('Checkout Tests @regression @smoke', () => {
 
     async function navigateToCheckout(page: any) {
         const loginPage = new LoginPage(page);

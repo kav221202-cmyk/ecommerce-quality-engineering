@@ -3,7 +3,7 @@ import { LoginPage } from '../pages/LoginPage';
 import { ProductsPage } from '../pages/ProductsPage';
 import { users } from '../test-data/users';
 
-test.describe('Products Tests', () => {
+test.describe('Products Tests @regression', () => {
 
     test.beforeEach(async ({ page }) => {
         const loginPage = new LoginPage(page);

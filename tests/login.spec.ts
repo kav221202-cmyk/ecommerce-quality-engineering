@@ -3,7 +3,7 @@ import { LoginPage } from '../pages/LoginPage';
 import { ProductsPage } from '../pages/ProductsPage';
 import { users } from '../test-data/users';
 
-test.describe('Authentication Tests', () => {
+test.describe('Authentication Tests @regression @smoke', () => {
 
     test('TC-AUTH-001 - Successful Login', async ({ page }) => {
 

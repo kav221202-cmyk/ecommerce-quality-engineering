@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 const API_BASE_URL = process.env.API_BASE_URL || 'https://dummyjson.com';
 
-test.describe('Products API Tests', () => {
+test.describe('Products API Tests @api @regression', () => {
 
     test('API-001 - GET Products Returns Successful Response', async ({ request }) => {
 

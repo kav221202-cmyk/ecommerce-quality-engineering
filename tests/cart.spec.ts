@@ -4,7 +4,7 @@ import { ProductsPage } from '../pages/ProductsPage';
 import { CartPage } from '../pages/CartPage';
 import { users } from '../test-data/users';
 
-test.describe('Shopping Cart Tests', () => {
+test.describe('Cart Tests @regression @smoke', () => {
 
     test('TC-CART-001 - Verify Shopping Cart Page Is Displayed', async ({ page }) => {
 
